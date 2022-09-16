@@ -16,7 +16,8 @@
         }
         post {
             always {
-                emailext attachLog: true, attachmentsPattern: '/target/surefire-reports', body: '', subject: 'Status of pipeline', to: 'priti.ranga@testingxperts.com'        }
+                emailext subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'", "attachLog: true, attachmentsPattern: '/target/surefire-reports', body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""", "to: 'priti.ranga@testingxperts.com'"       }
     }
     }
    

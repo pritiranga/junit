@@ -18,7 +18,7 @@
             always {
                 echo 'I will always say Hello again!'
             
-                emailext body: "body: '${FILE,path="poc/target/surefire-reports/*.xml"}',
+                emailext body:'${FILE,path="poc/target/surefire-reports/*.xml"}',
                 to: "priti.ranga@testingxperts.com", 
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
     }

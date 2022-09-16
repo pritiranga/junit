@@ -8,12 +8,9 @@
             stage('Build') {
                 steps {
                     sh "mvn -Dmaven.test.failure.ignore=true clean compile test"
+        
+                    junit(testResults: 'target/surefire-reports/*.xml', allowEmptyResults : true, skipPublishingChecks: true)
                 }
-            }
-        }
-        post {
-            always {
-                junit(testResults: 'target/surefire-reports/*.xml', allowEmptyResults : true, skipPublishingChecks: true)
             }
         }
         post {

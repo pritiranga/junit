@@ -16,8 +16,7 @@
         }
         post {
             always {
-                emailext attachLog: true, body: '${FILE,path=\'target/surefire-reports\'}', subject: 'Status of pipeline', to: 'priti.ranga@testingxperts.com'
-        }
+                emailext attachLog: true, attachmentsPattern: '/target/surefire-reports', body: '', subject: 'Status of pipeline', to: 'priti.ranga@testingxperts.com'        }
     }
     }
    

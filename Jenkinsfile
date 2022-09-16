@@ -19,7 +19,7 @@
                 echo 'I will always say Hello again!'
             
                 emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-                recipientProviders: "priti.ranga@testingxperts.com", 
+                to: "priti.ranga@testingxperts.com", 
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
     }
     }
